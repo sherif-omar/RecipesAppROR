@@ -1,0 +1,56 @@
+
+
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+* {
+    
+}
+
+#brand  {
+    margin-right: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    line-height: 30px;
+    color: #FFF;
+}
+
+#link {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+#jumbotron{
+    background-image: asset-url("bg.jpg");
+    background-size: cover;
+    color: #FFF;
+}
+#myrow {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.jumbotron {
+    margin: 0;
+}
+
+.navbar{
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+hr{
+    margin:0;
+}
+
+footer{
+    color: #FFF;
+    font-weight: bold;
+    background-color: #000;
+    height: 40px;
+}

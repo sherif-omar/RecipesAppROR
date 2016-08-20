@@ -1,0 +1,36 @@
+ <%= form_for @recipe do |f| %>
+    <div class="panel-body">
+        <div class="container form-horizontal">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <%= f.text_field :name, placeholder: "Name Recipe", :class => "form-control"%>    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <%= f.text_field :summary, placeholder: "Enter Summary for Recipe", :class => "form-control"%>    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <%= f.text_area :description, placeholder: "Description for Recipe",
+                            rows: 10,:class => "form-control"%>    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-11">
+                        <%= f.submit "Submit", :class => "btn btn-success btn-block"%>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

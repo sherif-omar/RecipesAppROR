@@ -29,15 +29,20 @@
             
         </div>
         <div class="panel-body">
-            <div class="col-md-2">
-                <% if !recipe.chef_id.nil? %>
-                    <%= gravatar_for(recipe.chef, size: 130) %>
-                    <h5>Chef name: <%= Chef.find_by_id(recipe.chef_id).chefname %></h5>
-                <% end %>
+            <div class="col-md-3">
+                <%= image_tag(recipe.picture.url,size: "250x150", :class => "img-responesive img-rounded gravatar") if !recipe.picture? %>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-7">
                 <h4><%= recipe.summary%></h4>
                 <p><%= truncate(recipe.description, :length => 50)%></p>
+            </div>
+            <div class="col-md-2">
+                <div class="col-md-12 col-md-offset-2">
+                    <% if !recipe.chef_id.nil? && Chef.order("id").where(id: "#{!recipe.chef_id}") %>
+                        <%= gravatar_for(recipe.chef, size: 130)  %>
+                        <h5 class="col-md-offset-1"><%= Chef.find_by_id(recipe.chef_id).chefname %></h5>
+                    <% end %>
+                </div>
             </div>
            <div class="row">
                <div class="col-md-12">

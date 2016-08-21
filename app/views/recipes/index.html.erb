@@ -30,7 +30,7 @@
         </div>
         <div class="panel-body">
             <div class="col-md-3">
-                <%= image_tag(recipe.picture.url,size: "250x150", :class => " img-rounded gravatar") if !recipe.picture? %>
+                <%= image_tag(recipe.picture.url,size: "250x200", :class => " img-rounded gravatar") if recipe.picture? %>
             </div>
             <div class="col-md-7">
                 <h4><%= recipe.summary%></h4>

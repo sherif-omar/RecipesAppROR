@@ -31,6 +31,7 @@
         <div class="panel-body">
             <div class="col-md-3">
                 <%= image_tag(recipe.picture.url,size: "250x200", :class => " img-rounded gravatar") if recipe.picture? %>
+                
             </div>
             <div class="col-md-7">
                 <h4><%= recipe.summary%></h4>
@@ -47,6 +48,16 @@
            <div class="row">
                <div class="col-md-12">
                    <div class="pull-right">
+                       <%= link_to like_recipe_path(recipe,like: true), method: :post do %>
+                            <i class="glyphicon glyphicon-thumbs-up"></i> 
+                            &nbsp; 
+                            <%= recipe.thumbs_up_total %>
+                        <% end %>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <%= link_to like_recipe_path(recipe,like: false), method: :post do %>
+                            <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp; <%= recipe.thumbs_down_total %>
+                        <% end %>
+                        &nbsp;&nbsp;
                         <%= link_to 'Ready More <span class="glyphicon glyphicon-chevron-right"></span>'.html_safe,recipe_path(recipe),
                         :class => "btn btn-primary", :style => "color:#FFF;"%>
                         <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-md btn-success" %>
